@@ -1,0 +1,326 @@
+ <!doctype html>
+ <html> 
+ <head>
+ <meta name="viewport" content='width=device-width, initial-scale=1.0 user-scalable=no'>
+ <title>stop watch</title>
+ <style type="text/css">
+ *{
+ padding:0;
+ margin:0;
+ box-sizing:border-box;
+ 
+ }
+ .maindiv{
+ background-image:linear-gradient(120deg,#1c1c1c 40%,#4A4A4A 50%,#6d6d6d 70%,#010101);
+ background-repeat:no-repeat;
+ width:100%;
+ height:100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: fixed;
+ inset: 0;
+ border: 1px solid #000;
+z-index: 1;
+
+ }
+ .container{
+ position:relative;
+ width: 100%;
+ text-align:center;
+ font-size:2.5rem;
+ 
+ }
+ .timer{
+ font-stretch:extra-condensed;
+ font-size:2 rem;
+ font-family:sans-serif;
+ font-weight:bold;
+ color:white;
+ background-color:#1c1c1c;
+ padding:10px 0 5px;
+ border:none;
+ border-radius:20px;
+  box-shadow:1px 0 2px 3px #0073cf;
+  font-family:cursive;
+  width: 100%;
+  
+ }
+ button{
+ position:relative;
+ background-color:transparent;
+ outline:none;
+ text-decoration:none;
+ border:none;
+ font-size:1.7rem;
+ margin:20px;
+
+ font-weight:bold;
+ color:#e6e6e6; 
+ padding:5px;
+ border-radius:20px;
+ background:#6d6d6d;
+ box-shadow:1px 0 2px 5px #0073cf;
+ font-family:cursive;
+ }
+ button:hover{
+ box-shadow:0 0 5px 5px transparent;
+ }
+ .backg{
+ 
+ position:absolute;
+ width:100%;
+ height: 400px;
+ box-shadow:10px 5px 10px 10px #0073cf;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+
+ }
+ 
+ #displayTime {
+ font-family: cursive;
+ color: white;
+ text-shadow: 3px 2px 5px #0073cf;
+ font-size: 1.5rem;
+ margin-top: 20px;
+ }
+ 
+ button:before {
+ content: '';
+ background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+ position: absolute;
+ top: -2px;
+ left:-2px;
+ background-size: 400%;
+ z-index: -1;
+ filter: blur(5px);
+ width: calc(100% + 4px);
+ height: calc(100% + 4px);
+ animation: glowing 20s linear infinite;
+ opacity: 0;
+ transition: opacity .3s ease-in-out;
+ border-radius: 10px;
+ }
+ 
+ buttom:active {
+ color: #000
+ }
+ 
+ button:active:after {
+ background: transparent;
+ }
+ 
+ button:hover:before {
+ opacity: 1;
+ }
+ 
+ button:after {
+ z-index: -1;
+ content: '';
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ background: #111;
+ left: 0;
+ top: 0;
+ border-radius: 10px;
+ }
+ .opening-page {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: #1c1c1c;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: white;
+           font-family: cursive;
+           text-align: center;
+           font-size: 2rem;
+           z-index: 9999;
+       }
+       .writing-animation {
+       overflow: hidden;
+       white-space: nowrap;
+       border-right: 2px solid #fff; /* Adjust the color as needed */
+       animation: typing 2s steps(20, end) forwards;
+       }
+       
+       @keyframes typing {
+       from {
+       width: 0;
+       }
+       to{
+        width:50%;
+       }
+       }
+ @keyframes glowing {
+ 0% { background-position: 0 0; }
+ 50% { background-position: 400% 0; }
+ 100% { background-position: 0 0; }
+ } 
+ .title {
+ position: relative;
+
+ font-family: cursive;
+ text-align: center;
+ color: white;
+ text-shadow: 3px 2px 5px #0073cf;
+ font-size: 2.5rem;
+ }
+
+ @media  screen and (max-width: 2000px) and (min-width: 601px) {
+    
+
+    
+ 
+ .timer {
+ font-size: 1.8rem;
+ font-stretch:extra-condensed;
+ font-family:sans-serif;
+ font-weight:bold;
+ color:white;
+ background-color:#1c1c1c;
+ padding:10px 0 5px;
+ border:none;
+ border-radius:20px;
+  box-shadow:1px 0 2px 3px #0073cf;
+  font-family:cursive;
+  width: 70%;
+  margin: 5px auto 0 auto;
+ 
+
+ }
+ 
+ button {
+ font-size: 1.5rem;
+ margin: 15px;
+ top: 15%;
+ }
+ .title {
+ font-size: 2rem;
+ top:5px;
+ }
+ #displayTime {
+ font-size: 1.5rem;
+ top: 5px;
+ }
+ .opening-page {
+ font-size: 1.5rem;
+ }
+ .writing-animation {
+ overflow: hidden;
+ white-space: nowrap;
+ border-right: 2px solid #fff; /* Adjust the color as needed */
+ animation: typing 2s steps(15, end) forwards;
+ }
+
+       
+       @keyframes typing {
+       from {
+       width: 0;
+       }
+       to{
+        width:100%;
+       }
+       }
+ .backg
+ {
+    width: 75%;
+ }
+ 
+ @keyframes typing {
+ from {
+ width: 0;
+ }
+ to{
+ width:20%;
+ }
+ }
+ .buttondiv
+ {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    
+    align-items: center;
+    justify-content: center;
+ }
+
+ } 
+ 
+ 
+ </style>
+ </head>
+ 
+ <div class="opening-page">
+ <p class="writing-animation"> Diadem Tech</p> 
+ </div>
+ <div class="maindiv">
+ <div class="backg"> 
+ <h1 class="title">Stop Watch</h1>
+ <div class="container">
+     <p id="displayTime">Stored Time: <span id="storedTime">Not set</span></p>
+ <div class="timer">00 : 00 : 00 : 000</div>
+ <div class="buttondiv">
+ <button id="start">Start</button>
+ <button id="stop">Stop</button>
+ <button id="reset">Reset</button>
+ <button id="save" onclick="saveTime()">Save Time</button>
+ </div> 
+ </div>
+</div>
+</div>
+ </html> 
+ <script type="text/javascript">
+ let = [milliseconds,seconds,minutes,hours] = [0,0,0,0];
+ let timer_el = document.querySelector(".timer");
+ let storedTime_el = document.getElementById("storedTime");
+ let a = null;
+ 
+ document.getElementById("start").addEventListener("click", () => {
+ if(a !== null){
+ clearInterval(a);
+ }
+ a = setInterval(displayTimer,10);
+ });
+ 
+ document.getElementById("stop").addEventListener("click", () => {
+ clearInterval(a);
+ });
+ 
+ document.getElementById("reset").addEventListener("click", () => {
+ clearInterval(a);
+ [milliseconds,seconds,minutes,hours] = [0,0,0,0];
+ timer_el.innerHTML = "00 : 00 : 00 : 000";
+ });
+  
+ function displayTimer(){
+ milliseconds += 10;
+ seconds = milliseconds == 1000 ? (seconds + 1) % 60 : seconds;
+ minutes = seconds == 0 && milliseconds == 1000 ? (minutes + 1) % 60 : minutes;
+ hours = minutes ==60 && seconds == 0 && milliseconds == 0 ? hours + 1 : hours;
+ milliseconds = milliseconds == 1000 ? 0 : milliseconds;
+ 
+ let h = String(hours).padStart(2,"0");
+ let m = String(minutes).padStart(2,"0");
+ let s = String(seconds ).padStart(2,"0");
+ let ms = String(milliseconds).padStart(3,"0");
+ 
+ timer_el.innerHTML =`${h} : ${m} : ${s} : ${ms}`;
+ }
+  
+ function saveTime() {
+ const currentTime = timer_el.innerHTML;
+ storedTime_el.textContent = currentTime;
+ }
+ setTimeout(() => {
+ document.querySelector('.opening-page').style.display = 'none';
+ }, 3000); 
+ </script>
+  
